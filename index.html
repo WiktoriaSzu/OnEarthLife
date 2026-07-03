@@ -29,7 +29,15 @@
             <button class="carousel-btn right" id="scrollRight">&#8250;</button>
         </div>
     </main>
-    <script src="script.ts"></script>
-    <script src="script.js"></script>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightboxClose">&times;</button>
+            <img id="lightboxImg" src="" alt="">
+        </div>
+    </div>
+
+    <script type="module" src="./script.ts"></script>
   </body>
 </html>
