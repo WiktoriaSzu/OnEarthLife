@@ -1,3 +1,88 @@
+body {
+    background-color: #0f172a;
+    padding: 32px 48px;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid white;
+    margin: 0 -48px;
+}
+
+h1 {
+    color: #7CFF6B;
+    font-size: 3.5rem;
+    text-align: left;
+    font-family: 'Angelica', serif;
+}
+
+h2 {
+    color: white;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+p {
+    color: #A855F7;
+    margin: 4px 0;
+    text-align: right;
+    font-size: 1.3rem;
+}
+
+.email-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+label {
+    color: white;
+    font-size: 1.5rem;
+    white-space: nowrap;
+}
+
+input[type="email"] {
+    font-size: 1.4rem;
+    padding: 8px 16px;
+    border-radius: 0;
+    border: none;
+    width: 360px;
+    max-width: 60vw;
+}
+
+.email-subtext {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    text-align: center;
+    margin: 6px 0 64px;
+}
+
+.carousel-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.carousel-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.carousel-hint {
+    color: #04D9FF;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0;
+    margin-right: 80px;
+}
+
 .carousel {
     display: flex;
     align-items: center;
@@ -105,8 +190,55 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+    body {
+        padding: 20px 16px;
+    }
+
+    .divider {
+        margin: 0 -16px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    input[type="email"] {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+    }
+
+    .email-subtext {
+        margin-bottom: 32px;
+    }
+
+    .carousel-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .carousel-hint {
+        margin-right: 0;
+        font-size: 1rem;
+    }
+
+    .image-row {
+        width: calc(100vw - 100px);
+    }
+
     .image-row img {
-        width: 50vw;   /* 75% of the screen width */
-        max-width: 320px;
+        width: 42vw;
+        max-width: 200px;
     }
 }
