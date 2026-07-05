@@ -9,7 +9,7 @@ body {
 main {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 12px 48px;
+    padding: 28px 48px 12px;
     box-sizing: border-box;
 }
 
@@ -18,15 +18,33 @@ main {
     border-top: 1px solid white;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    margin-bottom: 0;
 }
 
 .banner-img {
     display: block;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+    margin-top: 0;
     object-fit: cover;
     vertical-align: bottom;
     clip-path: inset(4px 0);
+}
+
+.h1-row {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+
+.h1-planet {
+    flex: 1;
+    min-width: 0;
+    max-width: 165px;
+    max-height: 165px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 h1 {
@@ -60,10 +78,12 @@ p {
 .email-row {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 12px;
     margin-top: -12px;
     margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
 }
 
 label {
@@ -84,8 +104,10 @@ input[type="email"] {
 .email-subtext {
     color: #9ca3af;
     font-size: 0.9rem;
-    text-align: center;
+    text-align: left;
     margin: 2px 0 8px;
+    position: relative;
+    z-index: 1;
 }
 
 .page-body {
