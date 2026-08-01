@@ -1,13 +1,10 @@
 .contact-bar {
-    position: fixed;
-    top: 8px;
-    right: 16px;
+    position: static;
     text-align: right;
     color: #fff;
     font-size: 0.85rem;
     font-family: 'Roboto Mono', monospace;
-    z-index: 999;
-    pointer-events: none;
+    margin-bottom: 6px;
     line-height: 1.4;
 }
 
@@ -365,12 +362,19 @@ input[type="email"] {
 
 /* Mobile */
 @media (max-width: 767px) {
+    html, body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
     body {
         padding: 0;
     }
 
     main {
         padding: 12px 16px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .divider {
@@ -383,6 +387,7 @@ input[type="email"] {
         flex-direction: column;
         align-items: center;
         gap: 16px;
+        width: 100%;
     }
 
     /* Hide the middle earth oval on mobile */
@@ -400,12 +405,11 @@ input[type="email"] {
         margin-right: 0;
         margin-left: 0;
         justify-content: center;
+        gap: 24px;
     }
 
     .contact-bar {
-        position: static;
         text-align: left;
-        margin-bottom: 8px;
         font-size: 0.8rem;
     }
 
@@ -463,6 +467,13 @@ input[type="email"] {
     .page-right {
         padding-left: 0;
         width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .page-right p {
+        text-align: center;
+        overflow-wrap: break-word;
     }
 
     .carousel-section {
@@ -472,19 +483,34 @@ input[type="email"] {
         gap: 8px;
     }
 
+    .carousel-labels {
+        text-align: center;
+        margin-top: 12px;
+    }
+
     .carousel-hint {
         margin-left: 0;
         padding-right: 0;
         font-size: 1rem;
+        text-align: center;
+        color: #d4788a;
     }
 
-    /* Show ~2 covers at a time */
+    .carousel-hint-sub {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 8px;
+        color: #7CFF6B;
+    }
+
+    /* Single cover on mobile */
     .image-row {
-        width: calc(2 * 42vw + 16px);
+        width: 80vw;
+        max-width: 280px;
     }
 
     .image-row img {
-        width: 42vw;
-        max-width: 180px;
+        width: 80vw;
+        max-width: 280px;
     }
 }
