@@ -1,7 +1,23 @@
+.contact-bar {
+    position: fixed;
+    top: 8px;
+    right: 16px;
+    text-align: right;
+    color: #fff;
+    font-size: 0.85rem;
+    font-family: 'Roboto Mono', monospace;
+    z-index: 999;
+    pointer-events: none;
+    line-height: 1.4;
+}
+
+html {
+    overflow-x: clip;
+}
+
 body {
     background-color: #151C2C;
     font-family: 'Roboto Mono', monospace;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -24,11 +40,11 @@ main {
 .banner-img {
     display: block;
     width: 100vw;
+    height: 200px;
     margin-left: calc(-50vw + 50%);
     margin-top: 0;
-    object-fit: cover;
+    object-fit: fill;
     vertical-align: bottom;
-    clip-path: inset(4px 0);
 }
 
 .h1-row {
@@ -40,8 +56,49 @@ main {
 .h1-planet {
     flex: 1;
     min-width: 0;
-    max-width: 165px;
-    max-height: 165px;
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.h1-planets-right {
+    display: flex;
+    gap: 48px;
+    align-items: flex-end;
+    margin-left: auto;
+    margin-right: -48px;
+}
+
+.h1-planet-small {
+    width: 75px;
+    height: 75px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.h1-planet-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.h1-planet-label span {
+    color: #fff;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.h1-planet-by {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.h1-planet-medium {
+    width: 105px;
+    height: 105px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
@@ -49,9 +106,9 @@ main {
 
 h1 {
     color: #7CFF6B;
-    font-size: 5rem;
+    font-size: 5.75rem;
     text-align: left;
-    font-family: 'Angelica', serif;
+    font-family: 'Roboto Mono', monospace;
     padding-left: 0;
     margin-left: 48px;
     margin-top: 0;
@@ -114,6 +171,7 @@ input[type="email"] {
     display: flex;
     align-items: flex-start;
     margin-left: -48px;
+    margin-top: 40px;
 }
 
 .carousel-side-img {
@@ -129,20 +187,55 @@ input[type="email"] {
     padding-left: 24px;
 }
 
+.page-right p {
+    text-align: right;
+    color: #fff;
+}
+
 .carousel-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
+    margin-top: 32px;
 }
 
 .carousel-hint {
-    color: #04D9FF;
-    font-size: 1.3rem;
-    text-align: center;
+    color: #d4788a;
+    font-size: 1.6rem;
+    text-align: left;
     margin: 0;
-    margin-left: auto;
     padding-right: 24px;
+}
+
+.page-right .carousel-hint {
+    color: #d4788a;
+}
+
+.carousel-hint-sub {
+    color: #7CFF6B;
+    font-size: 1.7rem;
+    text-align: left;
+    margin: 24px 0 0;
+    letter-spacing: 0.05em;
+}
+
+.page-right .carousel-hint-sub {
+    color: #7CFF6B;
+}
+
+.carousel-labels {
+    margin-top: 24px;
+}
+
+.carousel-arrow {
+    color: #A855F7;
+    font-size: 3rem;
+    flex-shrink: 0;
+    line-height: 1;
+    display: inline-block;
+    transform: scaleX(3);
+    transform-origin: center;
 }
 
 .carousel {
@@ -178,13 +271,13 @@ input[type="email"] {
     display: flex;
     gap: 16px;
     overflow: hidden;
-    width: 660px; /* 4 images × 153px + 3 gaps × 16px */
+    width: 224px;
     flex-shrink: 0;
     scroll-behavior: smooth;
 }
 
 .image-row img {
-    width: 153px;      /* Desktop */
+    width: 224px;
     height: auto;
     flex: 0 0 auto;
     object-fit: contain;
@@ -285,10 +378,39 @@ input[type="email"] {
         margin-left: calc(-50vw + 50%);
     }
 
+    /* Stack h1-row vertically: Welcome first, then planet images */
+    .h1-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    /* Hide the middle earth oval on mobile */
+    .h1-planet {
+        display: none;
+    }
+
     h1 {
-        font-size: 2.2rem;
+        font-size: 2.53rem;
         margin-left: 0;
-        margin-bottom: 16px;
+        margin-bottom: 0;
+    }
+
+    .h1-planets-right {
+        margin-right: 0;
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .contact-bar {
+        position: static;
+        text-align: left;
+        margin-bottom: 8px;
+        font-size: 0.8rem;
+    }
+
+    .carousel-arrow {
+        display: none;
     }
 
     .h1-exclaim {
