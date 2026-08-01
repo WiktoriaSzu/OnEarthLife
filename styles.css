@@ -73,6 +73,7 @@ main {
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
+    padding-bottom: 10px;
 }
 
 .h1-planet-label {
@@ -94,8 +95,8 @@ main {
 }
 
 .h1-planet-medium {
-    width: 105px;
-    height: 105px;
+    width: 95px;
+    height: 95px;
     aspect-ratio: 1 / 1;
     object-fit: cover;
     border-radius: 50%;
