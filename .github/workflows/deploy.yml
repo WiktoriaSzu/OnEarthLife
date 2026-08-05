@@ -30,6 +30,10 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Grant write access on server
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo chown -R ${{ secrets.SSH_USER }}:${{ secrets.SSH_USER }} /var/www/html/"
+
       - name: Upload dist to server
         run: |
           scp -i ~/.ssh/deploy_key -r dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
