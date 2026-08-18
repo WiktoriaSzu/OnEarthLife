@@ -47,64 +47,20 @@ main {
 .h1-row {
     display: flex;
     align-items: center;
-    gap: 120px;
 }
 
 .h1-planet {
-    flex: 1;
-    min-width: 0;
-    width: 220px;
+    flex: 0 0 auto;
+    width: 242px;
     height: auto;
     object-fit: contain;
     border-radius: 0;
-}
-
-.h1-planets-right {
-    display: flex;
-    gap: 48px;
-    align-items: flex-end;
-    margin-left: auto;
-    margin-right: -48px;
-}
-
-.h1-planet-small {
-    width: 75px;
-    height: 75px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
-    padding-bottom: 10px;
-}
-
-.h1-planet-label {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-}
-
-.h1-planet-label span {
-    color: #fff;
-    font-size: 0.8rem;
-    text-align: center;
-}
-
-.h1-planet-by {
-    color: #fff;
-    font-size: 0.8rem;
-}
-
-.h1-planet-medium {
-    width: 95px;
-    height: 95px;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 50%;
+    margin: 0 auto;
 }
 
 h1 {
     color: #7CFF6B;
-    font-size: 5.75rem;
+    font-size: 6.25rem;
     text-align: left;
     font-family: 'Roboto Mono', monospace;
     padding-left: 0;
@@ -383,30 +339,22 @@ input[type="email"] {
         margin-left: calc(-50vw + 50%);
     }
 
-    /* Stack h1-row vertically: Welcome first, then planet images */
+    /* Keep Welcome! text and planet image side by side, tightly packed */
     .h1-row {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
+        justify-content: center;
+        gap: 8px;
         width: 100%;
     }
 
-    /* Hide the middle earth oval on mobile */
     .h1-planet {
-        display: none;
+        width: 90px;
+        margin: 0;
     }
 
     h1 {
         font-size: 2.53rem;
         margin-left: 0;
         margin-bottom: 0;
-    }
-
-    .h1-planets-right {
-        margin-right: 0;
-        margin-left: 0;
-        justify-content: center;
-        gap: 24px;
     }
 
     .contact-bar {
