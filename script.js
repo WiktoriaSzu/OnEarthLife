@@ -1,32 +1,38 @@
 "use strict";
-const imageRow = document.getElementById('imageRow');
-const scrollLeft = document.getElementById('scrollLeft');
-const scrollRight = document.getElementById('scrollRight');
-const scrollAmount = 186;
-scrollLeft.addEventListener('click', () => {
-    imageRow.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-});
-scrollRight.addEventListener('click', () => {
-    imageRow.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-});
+const scrollAmount = 167;
+function setupCarousel(rowId, leftId, rightId) {
+    const row = document.getElementById(rowId);
+    const left = document.getElementById(leftId);
+    const right = document.getElementById(rightId);
+    left.addEventListener('click', () => {
+        row.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+    right.addEventListener('click', () => {
+        row.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+}
+setupCarousel('imageRowEng', 'scrollLeftEng', 'scrollRightEng');
+setupCarousel('imageRowPl', 'scrollLeftPl', 'scrollRightPl');
 // Lightbox
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');
 const lightboxBackdrop = document.getElementById('lightboxBackdrop');
-function openLightbox(src, alt) {
+const lightboxDownload = document.getElementById('lightboxDownload');
+function openLightbox(src, alt, pdf) {
     lightboxImg.src = src;
     lightboxImg.alt = alt;
+    lightboxDownload.href = pdf;
     lightbox.classList.add('open');
 }
 function closeLightbox() {
     lightbox.classList.remove('open');
     lightboxImg.src = '';
 }
-imageRow.querySelectorAll('img').forEach((img) => {
-    img.addEventListener('click', () => {
-        openLightbox(img.src, img.alt);
-    });
+document.querySelectorAll('.image-row img').forEach((el) => {
+    const img = el;
+    const pdf = img.dataset.pdf ?? 'static/files/oelmag0108.pdf';
+    img.addEventListener('click', () => openLightbox(img.src, img.alt, pdf));
 });
 lightboxClose.addEventListener('click', closeLightbox);
 lightboxBackdrop.addEventListener('click', closeLightbox);
