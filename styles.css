@@ -148,7 +148,7 @@ input[type="email"] {
 
 .carousel-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
     margin-top: 32px;
@@ -158,6 +158,36 @@ input[type="email"] {
     display: flex;
     align-items: center;
     gap: 4px;
+}
+
+.carousel-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.short-form-row {
+    position: relative;
+}
+
+.short-form-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    font-size: 1.3rem;
+    white-space: nowrap;
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    margin-right: 12px;
+    transform: translateY(-50%);
+}
+
+.short-form-arrow {
+    color: #A855F7;
+    font-size: 1.82rem;
+    line-height: 1;
 }
 
 .carousel-hint {
@@ -194,6 +224,7 @@ input[type="email"] {
     flex-shrink: 0;
     line-height: 1;
     display: inline-block;
+    margin-top: 24px;
     transform: scaleX(3);
     transform-origin: center;
 }
@@ -242,6 +273,8 @@ input[type="email"] {
     flex: 0 0 auto;
     object-fit: contain;
     border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-sizing: border-box;
 }
 
 .cover-wrap {
@@ -459,9 +492,38 @@ input[type="email"] {
     }
 
     .carousels-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+    }
+
+    .carousel-groups {
+        gap: 12px;
+    }
+
+    .carousel {
+        gap: 4px;
+        padding: 2px;
+    }
+
+    .carousel-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 18px;
+    }
+
+    .short-form-row {
+        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 12px;
+        gap: 4px;
+    }
+
+    .short-form-label {
+        position: static;
+        transform: none;
+        margin-right: 0;
     }
 
     .carousel-labels {
@@ -486,12 +548,12 @@ input[type="email"] {
 
     /* Single cover on mobile */
     .image-row {
-        width: 80vw;
-        max-width: 280px;
+        width: 26vw;
+        max-width: 202px;
     }
 
     .image-row img {
-        width: 80vw;
-        max-width: 280px;
+        width: 26vw;
+        max-width: 202px;
     }
 }
