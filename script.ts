@@ -16,6 +16,8 @@ function setupCarousel(rowId: string, leftId: string, rightId: string): void {
 
 setupCarousel('imageRowEng', 'scrollLeftEng', 'scrollRightEng');
 setupCarousel('imageRowPl', 'scrollLeftPl', 'scrollRightPl');
+setupCarousel('imageRowAugustEng', 'scrollLeftAugustEng', 'scrollRightAugustEng');
+setupCarousel('imageRowAugustPl', 'scrollLeftAugustPl', 'scrollRightAugustPl');
 
 // Lightbox
 const lightbox = document.getElementById('lightbox') as HTMLDivElement;
