@@ -160,34 +160,18 @@ input[type="email"] {
     gap: 4px;
 }
 
+.carousel-language {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    min-width: 2.2rem;
+    text-align: center;
+}
+
 .carousel-groups {
     display: flex;
     flex-direction: column;
     gap: 4px;
-}
-
-.short-form-row {
-    position: relative;
-}
-
-.short-form-label {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: white;
-    font-size: 1.3rem;
-    white-space: nowrap;
-    position: absolute;
-    right: 100%;
-    top: 50%;
-    margin-right: 12px;
-    transform: translateY(-50%);
-}
-
-.short-form-arrow {
-    color: #A855F7;
-    font-size: 1.82rem;
-    line-height: 1;
 }
 
 .carousel-hint {
@@ -215,7 +199,7 @@ input[type="email"] {
 }
 
 .carousel-labels {
-    margin-top: 24px;
+    margin-top: 140px;
 }
 
 .carousel-arrow {
@@ -224,7 +208,7 @@ input[type="email"] {
     flex-shrink: 0;
     line-height: 1;
     display: inline-block;
-    margin-top: 24px;
+    margin-top: 140px;
     transform: scaleX(3);
     transform-origin: center;
 }
@@ -237,32 +221,11 @@ input[type="email"] {
     padding: 4px;
 }
 
-.carousel-btn {
-    background: rgba(0, 0, 0, 0.4);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
-    font-size: 24px;
-    line-height: 1;
-    cursor: pointer;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-}
-
-.carousel-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
-}
-
 .image-row {
     display: flex;
     gap: 16px;
     overflow: hidden;
-    width: 202px;
+    width: 420px;
     flex-shrink: 0;
     scroll-behavior: smooth;
 }
@@ -284,17 +247,6 @@ input[type="email"] {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-}
-
-.cover-lang-badge {
-    background: rgba(0, 0, 0, 0.65);
-    color: #7CFF6B;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    padding: 2px 6px;
-    border-radius: 4px;
-    pointer-events: none;
 }
 
 .image-row img {
@@ -507,28 +459,9 @@ input[type="email"] {
         padding: 2px;
     }
 
-    .carousel-btn {
-        width: 28px;
-        height: 28px;
-        font-size: 18px;
-    }
-
-    .short-form-row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-    }
-
-    .short-form-label {
-        position: static;
-        transform: none;
-        margin-right: 0;
-    }
-
     .carousel-labels {
         text-align: center;
-        margin-top: 12px;
+        margin-top: 40px;
     }
 
     .carousel-hint {
@@ -546,14 +479,13 @@ input[type="email"] {
         color: #7CFF6B;
     }
 
-    /* Single cover on mobile */
+    /* Keep both covers visible on mobile */
     .image-row {
-        width: 26vw;
-        max-width: 202px;
+        width: calc(100vw - 123px);
     }
 
     .image-row img {
-        width: 26vw;
-        max-width: 202px;
+        width: calc((100vw - 139px) / 2);
+        max-width: none;
     }
 }
