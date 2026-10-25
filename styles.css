@@ -221,6 +221,33 @@ input[type="email"] {
     padding: 4px;
 }
 
+.carousel-nav {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid #A855F7;
+    background: transparent;
+    color: #A855F7;
+    font-size: 1.3rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.carousel-nav:hover:not(:disabled) {
+    background: #A855F7;
+    color: #151C2C;
+}
+
+.carousel-nav:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
 .image-row {
     display: flex;
     gap: 16px;

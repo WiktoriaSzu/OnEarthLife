@@ -29,3 +29,30 @@ lightboxBackdrop.addEventListener('click', closeLightbox);
 document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+// Carousel scrolling
+function updateNavState(row: HTMLDivElement): void {
+    const prevBtn = document.querySelector<HTMLButtonElement>(`.carousel-nav-prev[data-target="${row.id}"]`);
+    const nextBtn = document.querySelector<HTMLButtonElement>(`.carousel-nav-next[data-target="${row.id}"]`);
+    const maxScroll = row.scrollWidth - row.clientWidth;
+    if (prevBtn) prevBtn.disabled = row.scrollLeft <= 1;
+    if (nextBtn) nextBtn.disabled = row.scrollLeft >= maxScroll - 1;
+}
+
+document.querySelectorAll<HTMLDivElement>('.image-row').forEach((row) => {
+    updateNavState(row);
+    row.addEventListener('scroll', () => updateNavState(row));
+});
+
+document.querySelectorAll<HTMLButtonElement>('.carousel-nav').forEach((btn) => {
+    btn.addEventListener('click', () => {
+        const targetId = btn.dataset.target;
+        if (!targetId) return;
+        const row = document.getElementById(targetId) as HTMLDivElement | null;
+        if (!row) return;
+        const firstImg = row.querySelector('img') as HTMLImageElement | null;
+        const step = firstImg ? firstImg.offsetWidth + 16 : row.clientWidth;
+        const direction = btn.classList.contains('carousel-nav-prev') ? -1 : 1;
+        row.scrollBy({ left: direction * step, behavior: 'smooth' });
+    });
+});
