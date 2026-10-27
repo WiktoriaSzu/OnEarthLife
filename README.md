@@ -106,5 +106,5 @@ onearthlifefromvenus@gmail.com
 
 - **Code** (HTML, CSS, TypeScript, configuration): [MIT](LICENSE)
 - **Magazine issues and artwork** (`static/files/`, `static/img/`):
-  © Aeria Teller, licensed under [CC BY-NC-ND 4.0](static/LICENSE.md). You can
+  © Aeria Tellar, licensed under [CC BY-NC-ND 4.0](static/LICENSE.md). You can
   share them freely with credit, but you can't sell them or share edited versions.
