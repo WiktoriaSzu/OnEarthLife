@@ -86,9 +86,12 @@ npm run build
 
 On every push to `main`, [`deploy.yml`](.github/workflows/deploy.yml):
 
-1. installs dependencies and runs `vite build`
-2. copies `dist/` and `static/files/` to `/var/www/html` on the server over SSH
+1. installs dependencies, runs `vite build` and adds `static/files/` to the build
+2. syncs the build to `/var/www/html` on the server with `rsync --delete`, so files
+   that are no longer part of the site are removed
 3. gives the files back to the web server user (`www-data`)
+
+The server needs `rsync` installed.
 
 The workflow needs three repository secrets:
 
