@@ -23,8 +23,6 @@ jobs:
           npm ci
           npm run build
 
-<<<<<<< HEAD
-=======
       - name: Add magazine files to the build
         run: |
           mkdir -p dist/static
@@ -34,7 +32,6 @@ jobs:
           test -f dist/index.html
           test -n "$(ls -A dist/static/files)"
 
->>>>>>> origin/main
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
