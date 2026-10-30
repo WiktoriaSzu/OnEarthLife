@@ -12,22 +12,13 @@
     "url": "git+https://github.com/WiktoriaSzu/OnEarthLife.git"
   },
   "keywords": [],
-<<<<<<< HEAD
-  "author": "",
-  "license": "ISC",
-=======
   "author": "Wiktoria Szulik",
   "license": "MIT",
->>>>>>> origin/main
   "bugs": {
     "url": "https://github.com/WiktoriaSzu/OnEarthLife/issues"
   },
   "homepage": "https://github.com/WiktoriaSzu/OnEarthLife#readme",
-<<<<<<< HEAD
-  "description": "",
-=======
   "description": "Website for On Earth Life, a free bilingual (English/Polish) science magazine",
->>>>>>> origin/main
   "devDependencies": {
     "typescript": "^6.0.3",
     "vite": "^8.1.3"
