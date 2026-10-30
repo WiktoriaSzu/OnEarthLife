@@ -43,21 +43,11 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "sudo chown -R ${{ secrets.SSH_USER }}:${{ secrets.SSH_USER }} /var/www/html/"
 
-<<<<<<< HEAD
-      - name: Upload dist to server
-        run: |
-          scp -i ~/.ssh/deploy_key -r dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
-
-      - name: Upload static files to server
-        run: |
-          scp -i ~/.ssh/deploy_key -r static/files ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/static/
-=======
       - name: Upload site and remove old files
         run: |
           rsync -rltz --delete --exclude='.well-known/' \
             -e "ssh -i ~/.ssh/deploy_key" \
             dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/
->>>>>>> origin/main
 
       - name: Fix permissions on server
         run: |
